@@ -17,21 +17,21 @@ import environ
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 env = environ.Env()
 BASE_DIR = environ.Path(__file__) - 2
-envFile = BASE_DIR.path(".env")
+envFile = BASE_DIR.path('.env')
 
 if exists(envFile):
-    env.read_env(f"{envFile}")
+    env.read_env(f'{envFile}')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG", default=False)
+DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'playground.core',
 ]
 
 MIDDLEWARE = [
